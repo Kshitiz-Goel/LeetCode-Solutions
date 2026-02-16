@@ -1,8 +1,15 @@
 class Solution {
 public:
     int reverseBits(int n) {    
-        string binary = bitset<32>(n).to_string();
-        reverse(binary.begin(),binary.end());
-        return stoi(binary,nullptr,2);
+        int temp=0;
+        int k=31;
+        while(n!=0){
+            if((n&1)==1){
+                temp=temp+pow(2,k);
+            }
+            n=n>>1;
+            k--;
+        }
+    return temp;
     }
 };
