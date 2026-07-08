@@ -13,10 +13,11 @@ public:
         int start =1 , end = n;
         while(start<=end){
             int no = start+(end-start)/2;
-            if(guess(no)==-1){
+            int res = guess(no);
+            if(res==-1){
                 end = no-1 ;
             }
-            else if(guess(no)==1){
+            else if(res==1){
                 start = no+1;
             }
             else{
